@@ -37,9 +37,8 @@ gulpfile.js.map
 *.map
 
 # Compiled or bundled assets (CSS, JS, etc.)
-*.css
 *.css.map
-*.js
+*.css
 *.js.map
 
 # Environment files
