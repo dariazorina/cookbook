@@ -1,0 +1,25 @@
+// Миксины
+@import 'mixin';
+// Стили плагинов
+@import 'libs';
+// Reset-стили
+@import 'null';
+// Основные стили
+@import 'global';
+// Шрифты
+@import 'font';
+// Основные стили элементов формы
+@import 'form';
+
+// Шапка
+@import 'components/header';
+
+// Страница рецепта
+@import 'components/recipe-author';
+@import 'pages/single-recipe/hero';
+@import 'pages/single-recipe/recipe';
+@import 'pages/single-recipe/history';
+// /Страница рецепта
+
+// Подвал
+@import 'components/footer';

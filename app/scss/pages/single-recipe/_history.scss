@@ -1,0 +1,166 @@
+@use 'sass:math';
+
+.history {
+
+	padding-left: 0; padding-right: 0;
+
+	background: var(--primary);
+
+	// .history__gallery
+
+	&__gallery {
+	}
+
+	// .history__gallery-track
+
+	&__gallery-track {
+		&.splide__track {
+			overflow: visible;
+		}
+	}
+
+	// .history__gallery-list
+
+	&__gallery-list {
+	}
+
+	// .history__gallery-slide
+
+	&__gallery-slide {
+
+		// Изначально все картинки устанавливают свой размер исходя из своего размера.
+		// Но я создал отдельный клас который устанавливает фиксированный размер картинки чтобы лучше смотрелось по дизайну
+		&.is-default {
+			
+			@include _768 {
+				width: 316px;
+			}
+
+			// Формулы для установки ширины картинки в которая будет занимать фиксированную часть экрана (через простой vw так не получится)
+			@include _992 {
+				width: calc(((100vw - var(--container-padding) * 2) * 0.45) - var(--container-padding));
+			}
+
+			@media (min-width: #{$container}px) {
+				width: calc(100vw - (((100vw - 1072px) / 2) + ((1072px - var(--container-padding) * 2) * 0.62) + var(--container-padding)));
+			}
+		}
+
+		img {
+			height: 45.5vw;
+			object-fit: cover;
+
+			@include _768 {
+				height: 30.5vw;
+			}
+		}
+	}
+
+	// .history__gallery-arrows
+
+	&__gallery-arrows {
+		position: absolute;
+		left: 50%; top: calc(100% + 24px);
+		transform: translate(-50%,0);
+
+		width: 168px; height: 48px;
+
+		display: grid;
+		grid-template-columns: 80px 80px;
+		gap: 8px;
+
+		@include _992 {
+			left: max(var(--container-padding), calc(50% - #{math.div($container, 2)}px));
+			top: calc(100% + 56px);
+			transform: none;
+		}
+	}
+
+	// .history__gallery-arrow
+
+	&__gallery-arrow {
+		position: static;
+		transform: none;
+
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 100%; height: 100%;
+
+		color: var(--accent);
+		background: var(--white);
+		border-radius: 24px;
+		border: 1px solid var(--accent);
+
+		@media (hover: hover) {
+
+			transition: background .2s, color .2s;
+
+			&:hover {
+				background: var(--accent);
+				color: var(--white);
+			}
+		
+			&:active {
+				background: var(--accent-active);
+				color: var(--white);
+			}
+		}
+
+		svg {
+			width: 32px; height: 32px;
+		}
+	}
+
+	// .history__inner
+
+	&__inner {
+		@include _992 {
+			display: grid;
+			grid-template-columns: 419px auto;
+		}
+	}
+
+	// .history__content
+
+	&__content {
+		grid-column: 2;
+
+		margin: 96px 0 32px;
+
+		@include _992 {
+			max-width: 548px;
+			margin: 56px 32px;
+		}
+	}
+
+	// .history__heading
+
+	&__heading {
+		text-align: start;
+	}
+
+	// .history__title
+
+	&__title {
+		padding-top: 12px;
+	}
+
+	// .history__text
+
+	&__text {
+		padding-top: 32px;
+
+		font-size: 1rem;
+		line-height: 150%;
+
+		@include _550 {
+			font-size: 1.25rem;
+		}
+
+		p:not(:first-child) {
+			padding-top: 16px;
+		}
+	}
+}

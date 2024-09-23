@@ -1,0 +1,61 @@
+# Dependency directories
+node_modules/
+bower_components/
+
+# Gulp output directories (commonly used for distribution or build output)
+dist/
+build/
+public/
+temp/
+
+# Logs and local environment files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE specific files (VS Code, Sublime, etc.)
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# MacOS specific files
+._*
+
+# SASS cache files
+.sass-cache/
+
+# Gulp-specific files
+/.gulp/
+gulpfile.js.map
+
+# Ignore source maps
+*.map
+
+# Compiled or bundled assets (CSS, JS, etc.)
+*.css
+*.css.map
+*.js
+*.js.map
+
+# Environment files
+.env
+
+# Package-lock files (optional, depending on project policy)
+package-lock.json
+yarn.lock
+
+# Coverage reports (for tests)
+coverage/
+
+# Archives
+*.zip
+*.tar.gz
+
+# Temporary files
+*.tmp
+*.swp
