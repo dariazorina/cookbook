@@ -1,24 +1,24 @@
 .uber-uns-header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   padding: 0;
 
-  @include _992 {
-    align-items: center;
+//   @include _992 {
+//     align-items: center;
 
-    // min-height: calc(var(--svh, 1vh) * 70);
-    min-height: 70svh; //сохраняет высоту и буквы не налазят на картинку из соседнего раздела
-  }
+//     // min-height: calc(var(--svh, 1vh) * 70);
+//     //min-height: 675px;//70svh; //сохраняет высоту и буквы не налазят на картинку из соседнего раздела
+//   }
 
   @media (min-width: #{$container}px) {
     align-items: center;
-    min-height: 70svh;
-	// max-height: 675px;
+    // min-height: 70svh;
+    // max-height: 675px;
   }
 
   &__content {
-    padding: 0 0 36px;
+    // padding: 0 0 36px;
     // margin: -96px 0 0;
 
     text-align: left;
@@ -35,22 +35,32 @@
     position: absolute;
     max-width: 100%;
     width: 100%;
-    bottom: 73px;
+    // bottom: 73px;
     color: var(--uber-uns-header);
 
-    @include _550 {
-      bottom: 85px;
-    }
+    top: 70%;
 
-    @include _992 {
-      bottom: 100px;
-    }
+    // top: 550px;
+
+    // @include _550 {
+    // //   bottom: 85px;
+    // top: 70%;
+    // }
+
+    // @include _992 {
+    //   //bottom: 100px;
+    // }
+
+    // @media (min-width: #{$container}px) {
+    // 	bottom: 150px;
+    // }
   }
 
   &__title {
     z-index: 1;
     position: absolute;
-    bottom: 30px;
+    // bottom: 30px;
+    top: 75%;
     color: var(--white);
     padding: 10px 20px;
 
@@ -62,51 +72,45 @@
   &__image-wrapper {
     position: relative; /* This makes sure the pseudo-element can be positioned inside this container */
     display: block;
-    // transform: translate(calc(1px - var(--container-padding) - 1px), 0);
     transform: none;
 
     width: 100%;
-    // width: calc(100% + var(--container-padding) * 2);
-    // min-height: 275px;
-    // height: 100%;
     padding: 0;
-    padding-top: 58%;
-	max-height: 675px;
 
-    // left: 0;
-    // top: 0;
+    flex-grow: 0;
+
+    padding-top: 56.25%; //+
+
+    //  max-height: 675px; //+
+
+    // min-height: 100%;
+    // min-width: 100%;
 
     @include _992 {
-      //   position: absolute;
-      //   position: relative;
-      left: 0;
-      top: 0;
-      transform: none;
-      // transform: translate(calc(1px - var(--container-padding) - 1px), 0);
-      padding: 0;
-      width: 100%;
-    //   height: 100%; //calc(100% - 48px);
-      padding-top: 59%;
+      // left: 0;
+      // top: 0;
+      // transform: none;
 
-      // Формула для установки ширины картинки в которая будет занимать фиксированную часть экрана (через простой vw так не получится)
-      //   max-width: calc(
-      //     ((100vw - var(--container-padding) * 2) * 1.233) -
-      //       var(--container-padding)
-      //   );
+      // padding: 0;
+      // width: 100%;
+
+      //    padding-top: 56.25%;//
+      padding-top: 31.75%; //+
     }
 
     @media (min-width: #{$container}px) {
       // calc(100vw - (((100vw - 1072px) / 2) + ((1072px - var(--container-padding) * 2)) + var(--container-padding)));
-
-    //   max-width: 1072px;
-    //   max-height: 675px;
+      //   max-width: 1072px;
 
       //   position: absolute;
 
-    //   width: 90vw + var(--container-padding);
-      padding-top: 59%;
+      //   width: 90vw + var(--container-padding);
+      //   top: 0;
+
+      //   padding-top: 26.6%;
       padding-left: calc((100vw - 1072px) / 2); // - var(--container-padding));
       padding-right: calc((100vw - 1072px) / 2); // + var(--container-padding));
+      max-height: 675px;
     }
 
     img {
@@ -114,39 +118,43 @@
       left: 0;
       top: 0;
       width: 100%;
-
-	  max-width: 1072px;
+      max-width: 1072px;
       max-height: 675px;
-
-
-      //   width: calc(100% + var(--container-padding) * 2);
-
-      //   height: 100%;
       object-fit: cover;
 
-      // -webkit-mask: linear-gradient(0deg, transparent 0%, #000 125%);
-
       @media (min-width: #{$container}px) {
-        // -webkit-mask: none;
-
         left: calc((100vw - 1072px) / 2 - var(--container-padding) / 2.5);
       }
     }
+  }
+  &__image-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0; //30%;
+    width: calc(100% + var(--container-padding) * 2);
+    height: 100%; //70%;
+    max-height: 675px;
+    background: linear-gradient(
+      0deg,
+      rgba(54, 81, 45, 0.8) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 1; /* Ensure it appears above the image */
 
-    &__image-wrapper::before {
-      content: "";
-      position: absolute;
-      top: 30%;
-      left: 0;
-      // width: 100%;
-      width: calc(100% + var(--container-padding) * 2);
-      height: 70%;
-      background: linear-gradient(
-        0deg,
-        rgba(54, 81, 45, 0.8) 0%,
-        rgba(0, 0, 0, 0) 100%
-      );
-      z-index: 1; /* Ensure it appears above the image */
+    @include _992 {
+      // 	left: 0;
+      top: 10%;
+      // 	transform: none;
+      // 	padding: 0;
+      // 	width: 100%;
+      // 	padding-top: 59%;
+    }
+
+    @media (min-width: #{$container}px) {
+      // padding-top: 59%;
+      padding-left: calc((100vw - 1072px) / 2); // - var(--container-padding));
+      padding-right: calc((100vw - 1072px) / 2); // + var(--container-padding));
     }
   }
 }

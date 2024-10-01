@@ -160,4 +160,52 @@ document.querySelectorAll(".recipe__portions").forEach(recipePortions => {
 
 })
 
-// /Подсчитывания порций
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     const parent = document.querySelector('.uber-uns-header__image-wrapper');
+//     const children = parent.children;
+//     let maxHeight = 0;
+
+//     // Loop through each child to find the maximum height
+//     Array.from(children).forEach(child => {
+//         maxHeight = Math.max(maxHeight, child.offsetHeight);
+// 		console.log(`Parent height set to: ${maxHeight}px`);
+//     });
+
+//     // Set the parent's height to the tallest child's height
+//     parent.style.height = `${maxHeight}px`;
+// 	//console.log(`Parent height set to: ${maxHeight}px`);
+// });
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     function updateParentHeight() {
+//         const parent = document.querySelector('.uber-uns-header__image-wrapper');
+//         if (!parent) {
+//             console.error("Parent element not found!");
+//             return;
+//         }
+
+//         const children = parent.children;
+//         let maxHeight = 0;
+
+//         // Loop through each child to find the maximum height
+//         Array.from(children).forEach(child => {
+//             console.log(`Child height: ${child.className}px`);
+//             maxHeight = Math.max(maxHeight, child.offsetHeight);
+//         });
+
+//         // Set the parent's height to the tallest child's height
+//         parent.style.height = `${maxHeight}px`;
+//         console.log(`Parent height set to: ${maxHeight}px`);
+//     }
+
+//     // Run the function once when the DOM is fully loaded
+//     updateParentHeight();
+
+//     // Add an event listener for the window resize event
+//     window.addEventListener('resize', function() {
+//         console.log("Window resized, updating parent height.");
+//         updateParentHeight(); // Re-run the function on window resize
+//     });
+//});
