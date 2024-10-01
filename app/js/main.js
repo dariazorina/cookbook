@@ -125,6 +125,25 @@ document.querySelectorAll('.history__gallery').forEach(sliderElement => {
 
 })
 
+document.querySelectorAll('.uu__gallery').forEach(sliderElement => {
+
+	const slider = new Splide(sliderElement, {
+
+		type: "loop",
+
+		autoWidth: true,
+		gap: 16,
+
+		easing: "ease",
+
+		pagination: false,
+
+	});
+
+	slider.mount();
+
+})
+
 // /Слайдеры
 
 
