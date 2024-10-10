@@ -179,52 +179,66 @@ document.querySelectorAll(".recipe__portions").forEach(recipePortions => {
 
 })
 
+//tags on the landing page
+document.getElementById('tag-few-ingredients').addEventListener('click', function() {
+    // Code for search functionality
+   // alert('Search for recipes with fewer ingredients triggered!');
+    
+    // You can call your search function here
+    performSearch('few ingredients');
+});
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const parent = document.querySelector('.uber-uns-header__image-wrapper');
-//     const children = parent.children;
-//     let maxHeight = 0;
+document.getElementById('tag-easy').addEventListener('click', function() {
+    performSearch('easy');
+});
 
-//     // Loop through each child to find the maximum height
-//     Array.from(children).forEach(child => {
-//         maxHeight = Math.max(maxHeight, child.offsetHeight);
-// 		console.log(`Parent height set to: ${maxHeight}px`);
-//     });
+document.getElementById('tag-fast').addEventListener('click', function() {
+    performSearch('fast');
+});
 
-//     // Set the parent's height to the tallest child's height
-//     parent.style.height = `${maxHeight}px`;
-// 	//console.log(`Parent height set to: ${maxHeight}px`);
-// });
+document.getElementById('tag-comfort-food').addEventListener('click', function() {
+    performSearch('comfort-food');
+});
 
+document.getElementById('tag-party').addEventListener('click', function() {
+    performSearch('party');
+});
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     function updateParentHeight() {
-//         const parent = document.querySelector('.uber-uns-header__image-wrapper');
-//         if (!parent) {
-//             console.error("Parent element not found!");
-//             return;
-//         }
+document.getElementById('tag-classic').addEventListener('click', function() {
+    performSearch('classic');
+});
 
-//         const children = parent.children;
-//         let maxHeight = 0;
+document.getElementById('tag-stew').addEventListener('click', function() {
+    performSearch('stew');
+});
 
-//         // Loop through each child to find the maximum height
-//         Array.from(children).forEach(child => {
-//             console.log(`Child height: ${child.className}px`);
-//             maxHeight = Math.max(maxHeight, child.offsetHeight);
-//         });
+document.getElementById('tag-home').addEventListener('click', function() {
+    performSearch('home');
+});
 
-//         // Set the parent's height to the tallest child's height
-//         parent.style.height = `${maxHeight}px`;
-//         console.log(`Parent height set to: ${maxHeight}px`);
-//     }
+document.getElementById('tag-vegan').addEventListener('click', function() {
+    performSearch('vegan');
+});
 
-//     // Run the function once when the DOM is fully loaded
-//     updateParentHeight();
+document.getElementById('tag-econom').addEventListener('click', function() {
+    performSearch('econom');
+});
 
-//     // Add an event listener for the window resize event
-//     window.addEventListener('resize', function() {
-//         console.log("Window resized, updating parent height.");
-//         updateParentHeight(); // Re-run the function on window resize
-//     });
-//});
+document.getElementById('tag-vegetarian').addEventListener('click', function() {
+    performSearch('vegetarian');
+});
+
+document.getElementById('tag-quick').addEventListener('click', function() {
+    performSearch('quick');
+});
+
+function performSearch(query) {
+    // Replace this with the actual search logic
+    console.log('Searching for:', query);
+}
+
+//main sections on the landing page
+document.getElementById('Pasta-section').addEventListener('click', function() {
+    // performSearch('quick');
+	console.log('Pasta was clicked');
+});

@@ -11,19 +11,20 @@
 // Основные стили элементов формы
 @import 'form';
 
-// Шапка
+
 @import 'components/header';
 
-// Страница рецепта
 @import 'components/recipe-author';
 @import 'pages/single-recipe/hero';
 @import 'pages/single-recipe/recipe';
 @import 'pages/single-recipe/history';
-// /Страница рецепта
 
 @import 'pages/uber-uns/gallery';
 @import 'pages/uber-uns/header';
 @import 'pages/uber-uns/content';
 
-// Подвал
+@import 'pages/cookbook-main/header';
+@import 'pages/cookbook-main/content';
+@import 'pages/cookbook-main/footer';
+
 @import 'components/footer';

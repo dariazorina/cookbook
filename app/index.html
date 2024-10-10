@@ -1,374 +1,151 @@
 @@include("html/_header.html")
 
-	<!-- Основной контент -->
-	<main class="main">
-		<!-- Первый экран -->
-		<section class="recipe-hero">
-			<div class="recipe-hero__image">
-				<picture>
-					<source srcset="img/single-recipe/single-recipe-hero-image.avif" type="image/avif">
-					<source srcset="img/single-recipe/single-recipe-hero-image.webp" type="image/webp">
-					<img src="img/single-recipe/single-recipe-hero-image.jpg" alt="" width="708" height="531" loading="lazy">
-				</picture>
-			</div>
-			<div class="recipe-hero__content">
-				<strong class="recipe-hero__heading heading">Pasta</strong>
-				<h1 class="recipe-hero__title title">
-					Lasagne Bolognese
-				</h1>
-				<ul class="recipe-hero__tags">
-					<li>
-						<svg width="24" height="24">
-							<use href="img/sprites.svg#timer"></use>
-						</svg>
-						<span>
-							20 min.
-						</span>
-					</li>
-					<li>
-						<svg width="24" height="24">
-							<use href="img/sprites.svg#teaf"></use>
-						</svg>
-						<span>
-							vegetarisch
-						</span>
-					</li>
-					<li>
-						<svg width="24" height="24">
-							<use href="img/sprites.svg#econom"></use>
-						</svg>
-						<span>
-							econom
-						</span>
-					</li>
-				</ul>
-				<div class="recipe-hero__author recipe-author">
-					<div class="recipe-author__avatar">
-						<picture>
-							<source srcset="img/avatar.avif" type="image/avif">
-							<source srcset="img/avatar.webp" type="image/webp">
-							<img src="img/avatar.png" alt="" width="48" height="48" loading="lazy">
-						</picture>
-					</div>
-					<div class="recipe-author__info">
-						<span>Bereitgestellt von</span>
-						<b>Michi</b>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /Первый экран -->
-		<!-- Рецепт -->
-		<section class="recipe">
-			<div class="recipe__aside">
-				<div class="recipe__portions">
-					<h3 class="min-title">Portionen:</h3>
-					<div>
-						<button type="button" aria-label="Minus" data-minus>
-							<svg width="24" height="24">
-								<use href="img/sprites.svg#minus"></use>
-							</svg>
-						</button>
-						<input type="text" inputmode="numeric" value="1" max="10" placeholder="0">
-						<button type="button" aria-label="Plus" data-plus>
-							<svg width="24" height="24">
-								<use href="img/sprites.svg#plus"></use>
-							</svg>
-						</button>
-					</div>
-				</div>
-				<div class="recipe__rating">
-					<h3 class="min-title">Persönliches Rating:</h3>
-					<ul>
-						<li>
-							<svg width="24" height="24">
-								<use href="img/sprites.svg#star-filled"></use>
-							</svg>
-						</li>
-						<li>
-							<svg width="24" height="24">
-								<use href="img/sprites.svg#star-filled"></use>
-							</svg>
-						</li>
-						<li>
-							<svg width="24" height="24">
-								<use href="img/sprites.svg#star-filled"></use>
-							</svg>
-						</li>
-						<li>
-							<svg width="24" height="24">
-								<use href="img/sprites.svg#star-filled"></use>
-							</svg>
-						</li>
-						<li>
-							<svg width="24" height="24">
-								<use href="img/sprites.svg#star-half-filled"></use>
-							</svg>
-						</li>
-					</ul>
-				</div>
-				<div class="recipe__number-rating">
-					<h3 class="min-title">Parker Rating: <mark>78 (100)</mark></h3>
-				</div>
-				<div class="recipe__ingredients">
-					<h3 class="min-title is-large">Zutaten:</h3>
-					<ul>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-1">
-								<span></span>
-								<span>
-									12 Lasagneplatten
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-2">
-								<span></span>
-								<span>
-									400 g Hackfleisch <br> (Rind oder gemischt)
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-3">
-								<span></span>
-								<span>
-									1 Zwiebel, fein gehackt
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-4">
-								<span></span>
-								<span>
-									2 Knoblauchzehen, fein gehackt
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-5">
-								<span></span>
-								<span>
-									800 g Tomaten aus der Dose, gehackt
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-6">
-								<span></span>
-								<span>
-									3 EL Tomatenmark
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-7">
-								<span></span>
-								<span>
-									1 TL Zucker
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-8">
-								<span></span>
-								<span>
-									1 TL getrockneter Oregano
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-9">
-								<span></span>
-								<span>
-									Salz und Pfeffer nach Geschmack
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-10">
-								<span></span>
-								<span>
-									500 ml Milch
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-11">
-								<span></span>
-								<span>
-									50 g Butter
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-12">
-								<span></span>
-								<span>
-									50 g Mehl
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-13">
-								<span></span>
-								<span>
-									100 g geriebener Parmesan
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-14">
-								<span></span>
-								<span>
-									200 g geriebener Mozzarella
-								</span>
-							</label>
-						</li>
-						<li>
-							<label>
-								<input type="checkbox" name="ingredient-15">
-								<span></span>
-								<span>
-									2 EL Olivenöl
-								</span>
-							</label>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="recipe__main">
-				<ul class="recipe__plan recipe-plan">
-					<li class="recipe-plan__card recipe-plan-card">
-						<input type="radio" name="recipe-plan" id="recipe-plan-1" value="1" class="recipe-plan-card__input">
-						<label class="recipe-plan-card__inner" for="recipe-plan-1">
-							<div class="recipe-plan-card__header">
-								<span></span>
-								<h3>Vorbereitung der Zutaten</h3>
-							</div>
-							<ol class="recipe-plan-card__list">
-								<li><b>Hackfleisch anbraten:</b> <br>In einer Pfanne Olivenöl erhitzen und das Hackfleisch darin anbraten, bis es braun ist.</li>
-								<li><b>Zwiebeln und Knoblauch hinzufügen:</b> <br> Zwiebel und Knoblauch fein hacken und zum Hackfleisch geben, kurz mitbraten.</li>
-								<li><b>Tomatensoße zubereiten:</b> <br> Gehackte Tomaten aus der Dose, Tomatenmark, Zucker, Oregano und Basilikum hinzufügen. Mit Salz und Pfeffer abschmecken. Bei mittlerer Hitze 15-20 Minuten köcheln lassen.</li>
-							</ol>
-						</label>
-					</li>
-					<li class="recipe-plan__card recipe-plan-card">
-						<input type="radio" name="recipe-plan" id="recipe-plan-2" value="2" class="recipe-plan-card__input">
-						<label class="recipe-plan-card__inner" for="recipe-plan-2">
-							<div class="recipe-plan-card__header">
-								<span></span>
-								<h3>Zubereitung der Béchamelsauce</h3>
-							</div>
-							<ol class="recipe-plan-card__list">
-								<li><b>Hackfleisch anbraten:</b> <br>In einer Pfanne Olivenöl erhitzen und das Hackfleisch darin anbraten, bis es braun ist.</li>
-								<li><b>Zwiebeln und Knoblauch hinzufügen:</b> <br> Zwiebel und Knoblauch fein hacken und zum Hackfleisch geben, kurz mitbraten.</li>
-								<li><b>Tomatensoße zubereiten:</b> <br> Gehackte Tomaten aus der Dose, Tomatenmark, Zucker, Oregano und Basilikum hinzufügen. Mit Salz und Pfeffer abschmecken. Bei mittlerer Hitze 15-20 Minuten köcheln lassen.</li>
-							</ol>
-						</label>
-					</li>
-					<li class="recipe-plan__card recipe-plan-card">
-						<input type="radio" name="recipe-plan" id="recipe-plan-3" value="3" class="recipe-plan-card__input">
-						<label class="recipe-plan-card__inner" for="recipe-plan-3">
-							<div class="recipe-plan-card__header">
-								<span></span>
-								<h3>Zusammenstellen der Lasagne</h3>
-							</div>
-							<ol class="recipe-plan-card__list">
-								<li><b>Backofen vorheizen:</b> <br> Backofen auf 180°C (Umluft) vorheizen.</li>
-								<li><b>Lasagne schichten:</b> <br> Eine Auflaufform leicht einfetten. Eine Schicht Lasagneplatten auf den Boden legen. Darauf eine Schicht Hackfleischsoße und dann eine Schicht Béchamelsauce geben. Mit geriebenem Parmesan bestreuen. Diesen Vorgang wiederholen, bis alle Zutaten aufgebraucht sind, dabei mit einer Schicht Béchamelsauce abschließen.</li>
-								<li><b>Mozzarella hinzufügen:</b> <br> Den geriebenen Mozzarella gleichmäßig über die letzte Schicht Béchamelsauce verteilen.</li>
-							</ol>
-						</label>
-					</li>
-					<li class="recipe-plan__card recipe-plan-card">
-						<input type="radio" name="recipe-plan" id="recipe-plan-4" value="4" class="recipe-plan-card__input">
-						<label class="recipe-plan-card__inner" for="recipe-plan-4">
-							<div class="recipe-plan-card__header">
-								<span></span>
-								<h3>Backen und Servieren</h3>
-							</div>
-							<ol class="recipe-plan-card__list">
-								<li><b>Lasagne backen:</b> <br> Die Lasagne für 25-30 Minuten im vorgeheizten Ofen backen, bis der Käse goldbraun und die Lasagne durchgegart ist.</li>
-								<li><b>Servieren:</b> <br> Lasagne aus dem Ofen nehmen und vor dem Servieren 5-10 Minuten ruhen lassen.</li>
-							</ol>
-						</label>
-					</li>
-				</ul>
-			</div>
-		</section>
-		<!-- /Рецепт -->
-		<!-- О нас -->
-		<section class="history">
-			<div class="history__gallery splide">
-				<div class="history__gallery-track splide__track">
-					<ul class="history__gallery-list splide__list">
-						<li class="history__gallery-slide splide__slide is-default">
-							<picture>
-								<source srcset="img/single-recipe/single-recipe-gallery-image-1.avif" type="image/avif">
-								<source srcset="img/single-recipe/single-recipe-gallery-image-1.webp" type="image/webp">
-								<img src="img/single-recipe/single-recipe-gallery-image-1.jpg" alt="" width="492" height="368" class="image-aspect-ratio" loading="lazy">
-							</picture>
-						</li>
-						<li class="history__gallery-slide splide__slide">
-							<picture>
-								<source srcset="img/single-recipe/single-recipe-gallery-image-2.avif" type="image/avif">
-								<source srcset="img/single-recipe/single-recipe-gallery-image-2.webp" type="image/webp">
-								<img src="img/single-recipe/single-recipe-gallery-image-2.jpg" alt="" width="207" height="368" class="image-aspect-ratio" loading="lazy">
-							</picture>
-						</li>
-						<li class="history__gallery-slide splide__slide is-default">
-							<picture>
-								<source srcset="img/single-recipe/single-recipe-gallery-image-3.avif" type="image/avif">
-								<source srcset="img/single-recipe/single-recipe-gallery-image-3.webp" type="image/webp">
-								<img src="img/single-recipe/single-recipe-gallery-image-3.jpg" alt="" width="492" height="368" class="image-aspect-ratio" loading="lazy">
-							</picture>
-						</li>
-					</ul>
-				</div>
-				<div class="history__gallery-arrows splide__arrows">
-					<button class="history__gallery-arrow splide__arrow splide__arrow--prev" type="button" aria-label="Prev slide">
-						<svg width="24" height="24">
-							<use href="img/sprites.svg#arrow-prev"></use>
-						</svg>
-					</button>
-					<button class="history__gallery-arrow splide__arrow splide__arrow--next" type="button" aria-label="Next slide">
-						<svg width="24" height="24">
-							<use href="img/sprites.svg#arrow-next"></use>
-						</svg>
-					</button>
-				</div>
-			</div>
-			<div class="history__inner container">
-				<div class="history__content">
-					<h2 class="history__heading heading">History</h2>
-					<h3 class="history__title min-title is-large">
-						Familien-Lasagne: Ein Rezept, das Generationen verbindet
-					</h3>
-					<div class="history__text">
-						<p>Dieses Gericht hat eine besondere Bedeutung in unserer Familie. Die Tradition der Zubereitung von Lasagne begann mit meiner Urgroßmutter, die in einer kleinen Stadt im Süden Italiens lebte. Jeden Sonntag bereitete sie nach dem Kirchgang Lasagne für die ganze Familie zu. Es war die Zeit, in der sich alle zusammenfanden, um die Gesellschaft und das köstliche Essen zu genießen.</p>
-						<p>Als meine Großmutter in die Schweiz auswanderte, brachte sie dieses Rezept mit. In dem neuen Land wurde die Lasagne zu einer Erinnerung an die Heimat und die Familie, die sie in Italien zurückgelassen hatte. Meine Großmutter gab das Rezept an meine Mutter weiter, und so setzte sich die Tradition fort.</p>
-						<p>Jetzt koche ich diese Lasagne für meine Familie. Jedes Mal, wenn wir uns an den Tisch setzen, fühle ich eine Verbindung zu meinen Vorfahren. Die Lasagne bringt uns Freude und Zusammenhalt, und ich hoffe, dass auch meine Kinder diese Tradition fortführen und an ihre Kinder weitergeben werden.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /О нас -->
-	</main>
-	<!-- /Основной контент -->
+<main class="main">
+  <section class="cookbook-main-header">
+    <div class="cookbook-main-header__content">
+      <h2 class="cookbook-main-header__heading heading">REZEPTE</h2>
+      <h3 class="cookbook-main-header__title title">Familienkochbuch</h3>
+
+      <div class="cookbook-main-header__text">
+        <p>
+          Die besten Rezepte aus Omas <br />und Nonnas Küche - und viele mehr
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="cookbook-main-content">
+    <div class="cookbook-main-content__thumbnail" id="Pasta-section">
+      <img src="img/recipes/recipe-card-image-1.jpg" alt="Pasta" />
+      <div class="thumbnail-content">
+        <div class="comment comment-recipe-card">
+          <svg width="16" height="16">
+            <use href="img/sprites.svg#timer"></use>
+          </svg>
+          <span>24 rezepte</span>
+        </div>
+        <h3 class="min-title is-large">Pasta</h3>
+      </div>
+    </div>
+
+    <div class="cookbook-main-content__thumbnail" id="Suppen-section">
+      <img src="img/recipes/recipe-card-image-2.jpg" alt="Vignette Image 2" />
+      <div class="thumbnail-content">
+        <h3>Suppen und Salate</h3>
+        <p>Description for the second vignette.</p>
+      </div>
+    </div>
+
+    <div class="cookbook-main-content__thumbnail">
+      <img src="img/recipes/recipe-card-image-3.jpg" alt="Vignette Image 1" />
+      <div class="thumbnail-content">
+        <h3>Reis & Co.</h3>
+        <p>Description for the first vignette.</p>
+      </div>
+    </div>
+
+    <div class="cookbook-main-content__thumbnail">
+      <img src="img/recipes/recipe-card-image-4.jpg" alt="Vignette Image 2" />
+      <div class="thumbnail-content">
+        <h3>Gemüse</h3>
+        <p>Description for the second vignette.</p>
+      </div>
+    </div>
+
+    <div class="cookbook-main-content__thumbnail">
+      <img src="img/recipes/recipe-card-image-5.jpg" alt="Vignette Image 1" />
+      <div class="thumbnail-content">
+        <h3>Hauptspeisen</h3>
+        <p>Description for the first vignette.</p>
+      </div>
+    </div>
+
+    <div class="cookbook-main-content__thumbnail">
+      <img src="img/recipes/recipe-card-image-6.jpg" alt="Vignette Image 2" />
+      <div class="thumbnail-content">
+        <h3>Desserts</h3>
+        <p>Description for the second vignette.</p>
+      </div>
+    </div>
+  </section>
+  <section class="cookbook-main-footer">
+    <div class="cookbook-main-footer__content">
+      <ul class="cookbook-main-footer__tags">
+        <button type="button" id="tag-quick">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#timer"></use>
+          </svg>
+          <span> 20 min. </span>
+        </button>
+        <button type="button" id="tag-vegetarian">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#teaf"></use>
+          </svg>
+          <span> vegetarisch </span>
+        </button>
+        <button type="button" id="tag-econom">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#econom"></use>
+          </svg>
+          <span> econom </span>
+        </button>
+        <button type="button" id="tag-vegan">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#vegan"></use>
+          </svg>
+          <span> vegan </span>
+        </button>
+        <button type="button" id="tag-home">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#house"></use>
+          </svg>
+          <span> hausmannskost </span>
+        </button>
+        <button type="button" id="tag-stew">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#stew"></use>
+          </svg>
+          <span> eintopf </span>
+        </button>
+        <button type="button" id="tag-classic">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#classic"></use>
+          </svg>
+          <span> klassiker </span>
+        </button>
+        <button type="button" id="tag-party">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#cake"></use>
+          </svg>
+          <span> festtagesessen </span>
+        </button>
+        <button type="button" id="tag-comfort-food">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#comfort-food"></use>
+          </svg>
+          <span> comfort-food </span>
+        </button>
+        <button type="button" id="tag-fast">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#fast"></use>
+          </svg>
+          <span> schnell </span>
+        </button>
+        <button type="button" id="tag-easy">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#check"></use>
+          </svg>
+          <span> leicht </span>
+        </button>
+
+        <button type="button" id="tag-few-ingredients">
+          <svg width="24" height="24">
+            <use href="img/sprites.svg#few-ingredients"></use>
+          </svg>
+          <span> wenig zutatten </span>
+        </button>
+      </ul>
+    </div>
+  </section>
+</main>
 
 @@include("html/_footer.html")
