@@ -13,8 +13,12 @@
 
 
 @import 'components/header';
-
+@import 'components/footer';
 @import 'components/recipe-author';
+@import 'components/card';
+@import 'components/tag-button';
+
+
 @import 'pages/single-recipe/hero';
 @import 'pages/single-recipe/recipe';
 @import 'pages/single-recipe/history';
@@ -27,4 +31,6 @@
 @import 'pages/cookbook-main/content';
 @import 'pages/cookbook-main/footer';
 
-@import 'components/footer';
+@import 'pages/cookbook-section/header';
+@import 'pages/cookbook-section/content';
+@import 'pages/cookbook-section/footer';

@@ -1,0 +1,97 @@
+.card-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(336px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  align-items: stretch;
+
+  &__thumbnail_with_author {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    padding-bottom: 10px;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    &:active {
+      transform: scale(0.97); /* Shrinks slightly on click */
+      transition: transform 0.1s ease; /* Faster transition for click feedback */
+    }
+
+    .thumbnail {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+  }
+  &__thumbnail {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    &:active {
+      transform: scale(0.97); /* Shrinks slightly on click */
+      transition: transform 0.1s ease; /* Faster transition for click feedback */
+      // background: linear-gradient(
+      //   0deg,
+      //   rgba(54, 81, 45, 0.8) 0%,
+      //   rgba(0, 0, 0, 0) 10%
+      // );
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .image-crop {
+    // width: 336px; /* Set the desired width */
+    height: 252px; /* Set the desired height */
+    overflow: hidden;
+  }
+
+  .image-crop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+  }
+
+  .thumbnail-content {
+    padding: 15px 0;
+    text-align: left;
+
+    h3 {
+      margin: 12px 0;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .comment {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    .comment svg {
+      flex-shrink: 0; /* Ensures the SVG won't shrink */
+    }
+
+    .comment span {
+      padding-right: 15px;
+    }
+  }
+}

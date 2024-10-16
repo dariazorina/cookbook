@@ -226,6 +226,7 @@ function watching() {
 	watch(['app/json/*.json'], json);
 	watch(['app/video/*.*'], video);
 	watch(['app/audio/*.*'], audio);
+	watch(['app/img/*.*'], images)
 	watch(['app/img/sprites.svg'], sprites);
 	watch(['app/*.html'], htmlCompilation);
 	watch(['app/html/**/_*.html'], htmlComponents);

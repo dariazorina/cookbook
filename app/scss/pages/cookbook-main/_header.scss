@@ -1,20 +1,12 @@
 .cookbook-main-header {
-  // display: flex;
-  // flex-direction: column;
-
   &__content {
     text-align: center;
     padding: 40px 0 36px;
 
     padding-top: 100px;
-
-    // @include _992 {
-    //   padding-bottom: 48px;
-    // }
   }
 
   &__heading {
-    // color: var(--accent);
   }
 
   &__title {
