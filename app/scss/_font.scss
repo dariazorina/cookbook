@@ -63,6 +63,14 @@
 	}
 }
 
+.searching {
+	font-weight: 400;
+	font-size: 1.25rem;
+	line-height: 30px;
+	color: var(--tertiary);
+	opacity: 1;
+}
+
 .min-title {
 	font-family: var(--title-font);
 	font-weight: 500;
@@ -96,16 +104,5 @@
 	font-size: 0.725rem;
 	line-height: 130%;
 	text-align: center;
-	// text-transform: uppercase;
 	color: var(--tertiary);
-	// height: 16px;
-	// font-size: 1rem;
-
-	// @include _550 {
-		
-	// }
-	
-	// @include _992 {
-	// 	font-size: 1.125rem;
-	// }
 }
