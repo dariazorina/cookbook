@@ -1,13 +1,16 @@
 const searchInput = document.getElementById("searchInput");
 const clearButton = document.getElementById("clearButton");
+const closeLabel = document.getElementById("closeLabel");
 
 if (searchInput) {
   searchInput.addEventListener("input", function () {
 
     if (this.value.length > 0) {
       clearButton.style.display = "block";
+      closeLabel.style.display = "block";
     } else {
       clearButton.style.display = "none";
+      closeLabel.style.display = "none";
     }
   });
 
@@ -32,5 +35,6 @@ if (clearButton) {
     searchInput.value = "";
     searchInput.focus();
     clearButton.style.display = "none";
+    closeLabel.style.display = "none";
   });
 }
