@@ -1,47 +1,35 @@
-@use 'sass:math';
+@use "sass:math";
 
 .uu {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 80px;
+  background: var(--primary);
 
-	padding-left: 0; 
-    padding-right: 0;
-    padding-bottom: 80px;
-	background: var(--primary);
+  &__gallery {
+  }
+
+  &__gallery-track {
+    &.splide__track {
+      overflow: visible;
+    }
+  }
 
 
-    &__gallery {
-	}
+  &__gallery-list {
+  }
 
-	&__gallery-track {
-		&.splide__track {
-			overflow: visible;
-		}
-	}
+  &__gallery-slide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    &__gallery-list {
-	}
-    
-	&__gallery-slide {
-		&.is-default {
-			@include _768 {
-				width: 316px;
-			}
+    img {
+      object-fit: cover;
+    }
+  }
 
-			@include _992 {
-				width: calc(((100vw - var(--container-padding) * 2) * 0.45) - var(--container-padding));
-			}
-
-			@media (min-width: #{$container}px) {
-				width: calc(100vw - (((100vw - 1072px) / 2) + ((1072px - var(--container-padding) * 2) * 0.62) + var(--container-padding)));
-			}
-		}
-
-		img {
-			height: 45.5vw;
-			object-fit: cover;
-
-			@include _768 {
-				height: 30.5vw;
-			}
-		}
-	}
+  .splide__arrows {
+	display: none;
+  }
 }
