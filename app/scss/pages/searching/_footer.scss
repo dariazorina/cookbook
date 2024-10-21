@@ -1,6 +1,7 @@
 .searching-section-footer {
   padding: 0;
   height: 184px;
+  border-top: 1px solid rgba($color: #343328, $alpha: .5);
 
   &__content {
     padding: 56px clamp(30px, 20%, 247px);

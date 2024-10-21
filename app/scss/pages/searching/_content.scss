@@ -7,8 +7,7 @@
     position: relative;
     width: 100%;
     margin: 0 auto; /* Ensure section is centered within the page */
-    border-bottom: 1px solid rgba($color: #343328, $alpha: .5);
-
+  
     .searchInputContainer {
       margin: 0 auto; /* Centers the input within the section */
       width: 60%;
@@ -34,7 +33,7 @@
       width: 48px;
       height: 48px;
       position: absolute;
-      top: 66%;
+      top: 161px;
       right: 21%;
       transform: translateY(-50%);
       border: 1px solid var(--accent);
@@ -57,18 +56,23 @@
 
     .search-icon {
       position: absolute;
-      top: 66%;
+      top: 161px; 
       margin-left: 15px;
       transform: translateY(-50%);
     }
 
     label{
       position: absolute;
-      top: 60%;
+      top: 147px; 
       right: 27%;
       color: var(--tertiary);
       opacity: 0.5;
       display: none;
+    }
+
+    h3 {
+      padding-top: 80px;
+      text-align: center;
     }
   }
 }
