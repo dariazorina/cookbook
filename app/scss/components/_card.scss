@@ -1,9 +1,25 @@
 .card-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(336px, 1fr));
-  gap: 20px;
-  padding: 30px;
+  grid-template-columns: 336px;
+  gap: 32px;
+  padding: 30px 0 30px;
   align-items: stretch;
+
+  justify-content: center; /* Center the grid as a whole */
+  justify-items: center; /* Center the items in their columns */
+
+
+  @media (min-width: 1100px) {
+    grid-template-columns: repeat(3, 336px); /* 2 fixed-width columns */
+  }
+
+  @include _992 {
+    grid-template-columns: repeat(2, 336px); /* 2 fixed-width columns */
+  }
+
+  @include _768 {
+    grid-template-columns: repeat(2, 336px); /* 2 fixed-width columns */
+  }
 
   &__thumbnail_with_author {
     overflow: hidden;
