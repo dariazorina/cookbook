@@ -1,4 +1,8 @@
 .searching-section-footer {
+
+  position: relative;
+	z-index: 2;
+  
   padding: 0;
   height: 184px;
   border-top: 1px solid rgba($color: #343328, $alpha: .5);

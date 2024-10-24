@@ -1,6 +1,10 @@
 @use "sass:math";
 
 .uu {
+
+  position: relative;
+	z-index: 2;
+  
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 80px;

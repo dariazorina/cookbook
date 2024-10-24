@@ -1,6 +1,11 @@
 .cookbook-main-footer {
+
+  position: relative;
+	z-index: 2;
+
   background-color: var(--white);
+
   &__content {
-    padding: 56px clamp(30px, 20%, 247px);
+    padding: 56px clamp(30px, 35%, 265px);
   }
 }
