@@ -4,12 +4,12 @@
   position: relative;
   z-index: 2;
 
-  @include _1200 {
-    height: 50%;
-  } 
-
   padding: 0;
   border-top: 1px solid rgba($color: #343328, $alpha: 0.5);
+
+  @include _1200 {
+    flex: 1 1 auto;
+  } 
 
   &__content {
     padding: clamp(16px, 30px, 40px) clamp(30px, 15%, 300px);

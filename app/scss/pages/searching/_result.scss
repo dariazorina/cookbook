@@ -1,5 +1,9 @@
 .searching-section-result {
-  padding: 0;
-  background-color: var(--white);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.8);
+
+  @include _1200{
+    flex: 2 1 auto;
+  }
 
 }

@@ -3,8 +3,8 @@
   background: rgba(255, 255, 255, 0.8);
 
   @include _1200 {
-    height: 50%;
-  }  
+    flex: 1 1 auto;
+  }
 
   &__search-container {
     padding: 128px 0 50px;
