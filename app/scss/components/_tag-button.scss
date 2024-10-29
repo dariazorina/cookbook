@@ -14,10 +14,6 @@
 
     padding: 7px 8px;
 
-    background: var(--white);
-    border: 1px solid var(--accent);
-    border-radius: 16px;
-
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 100%;
@@ -45,5 +41,8 @@
       height: 16px;
       flex: 0 0 16px;
     }
+  }
+  .without-border {
+    border: none;
   }
 }
