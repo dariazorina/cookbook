@@ -210,9 +210,12 @@ body.is-mobile-menu-active .header {
 		// .header__nav-list
 
 		&-list {
+			flex: 1 1;
+
 			display: flex;
 			flex-wrap: wrap;
 			flex-direction: column;
+			justify-content: center;
 
 			padding-top: 16px;
 			
@@ -248,6 +251,10 @@ body.is-mobile-menu-active .header {
 				font-size: 1.5rem;
 			}
 
+			@include _992 {
+				font-size: 2rem;
+			}
+
 			@media (hover: hover) {
 
 				text-decoration: underline;
@@ -270,6 +277,62 @@ body.is-mobile-menu-active .header {
 				width: auto;
 			}
 
+		}
+
+		&-add {
+			flex: 1 1;
+			
+			padding: 20px 0 20px;
+
+			@include _992 {
+				padding: 20px 20px 32px;
+			}
+
+			span {
+				display: block;
+			}
+
+			ul {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 12px;
+
+				padding-top: 24px;
+
+				@include _992 {
+					gap: 24px;
+				}
+
+				a {
+					font-family: var(--title-font);
+					font-weight: 500;
+					font-size: 0.875rem;
+					line-height: 110%;
+					color: var(--tertiary);
+
+					@include _550 {
+						font-size: 1rem;
+						line-height: 110%;
+					}
+	
+					@include _992 {
+						font-size: 1.25rem;
+					}
+	
+					@media (hover: hover) {
+	
+						transition: color .2s;
+	
+						&:hover {
+							color: var(--accent);
+						}
+					
+						&:active {
+							color: var(--accent-active);
+						}
+					}
+				}
+			}
 		}
 	}
 
