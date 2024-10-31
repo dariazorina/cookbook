@@ -1,111 +1,115 @@
 // Подключения математических функций scss
-@use 'sass:math';
+@use "sass:math";
 
 // Переменные
 :root {
-	--title-font: 'Lora';
-	--main-font: 'Inter', sans-serif;
-	
-	--accent: #977247;
-	--accent-hover: #a88254;
-	--accent-active: #7d5b34;
+  --title-font: "Lora";
+  --main-font: "Inter", sans-serif;
 
-	--white: #FFF;
-	--black: #000;
-	--primary: #F7F6E8;
-	--primary-2: #D9E0BE;
-	--secondary: #FFF;
-	--tertiary: #343328;
+  --accent: #977247;
+  --accent-hover: #a88254;
+  --accent-active: #7d5b34;
 
-	--container-padding: 15px;
+  --white: #fff;
+  --black: #000;
+  --primary: #f7f6e8;
+  --primary-2: #d9e0be;
+  --secondary: #fff;
+  --tertiary: #343328;
 
-	--uber-uns-header: #D79D59;
+  --container-padding: 15px;
+
+  --uber-uns-header: #d79d59;
 }
 // /Переменные
 
 html {
-	min-height: 100%;
-	min-width: 320px;
+  min-height: 100%;
+  min-width: 320px;
 
-	background: var(--primary);
-	font-size: 16px;
+  background: var(--primary);
+  font-size: 16px;
 
-	// Скролбар для Firefox
-	@-moz-document url-prefix() {
-		scrollbar-color: var(--primary-2) var(--primary);
-	}
+  // Скролбар для Firefox
+  @-moz-document url-prefix() {
+    scrollbar-color: var(--primary-2) var(--primary);
+  }
 }
 
 body {
+  display: flex;
+  flex-direction: column;
 
-	display: flex;
-	flex-direction: column;
+  min-height: 100%;
+  min-width: 320px;
 
-	min-height: 100%;
-	min-width: 320px;
+  background: var(--primary);
 
-	background: var(--primary);
+  font-family: var(--main-font);
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--tertiary);
 
-	font-family: var(--main-font);
-	font-weight: 400;
-	line-height: 150%;
-	color: var(--tertiary);
+  // Скролбар для всех браузеров кроме Firefox
+  @media (hover: hover) {
+    &::-webkit-scrollbar {
+      background: var(--primary);
+      width: 16px;
+    }
 
-	// Скролбар для всех браузеров кроме Firefox
-	@media (hover: hover) {
-		&::-webkit-scrollbar {
-			background: var(--primary);
-			width: 16px;
-		}
-	
-		&::-webkit-scrollbar-track {
-			background: var(--primary);
-		}
-	
-		&::-webkit-scrollbar-thumb {
-			background: var(--primary-2);
-			border: 4px solid var(--primary);
-			border-radius: 8px;
-		}
-	}
+    &::-webkit-scrollbar-track {
+      background: var(--primary);
+    }
 
-	&.is-mobile-menu-active {
-		overflow: hidden;
-	}
-	
+    &::-webkit-scrollbar-thumb {
+      background: var(--primary-2);
+      border: 4px solid var(--primary);
+      border-radius: 8px;
+    }
+  }
+
+  &.is-mobile-menu-active {
+    overflow: hidden;
+  }
 }
 
 // Предотвращение сдвигания сайта когда включается меню
 body.is-mobile-menu-active {
-	@media (hover: hover) {
-		padding-right: var(--scrollbar-size);
-	}
+  @media (hover: hover) {
+    padding-right: var(--scrollbar-size);
+  }
 }
 
 // Адаптивные картинки с установленной высотой. Подробнее в main.js
 .image-aspect-ratio {
-	width: 100%; height: auto;
-	@supports (aspect-ratio: 1) {
-		aspect-ratio: var(--aspect-ratio);
-	}
+  width: 100%;
+  height: auto;
+  @supports (aspect-ratio: 1) {
+    aspect-ratio: var(--aspect-ratio);
+  }
 }
 
 section {
-	position: relative;
-	z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 .wrapper {
-	flex: 1 1 auto;
-	display: flex;
-	flex-direction: column;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
-	overflow: hidden;
+  overflow: hidden;
 
-	flex: 1 0 auto;
-	position: relative;
+  flex: 1 0 auto;
+  position: relative;
+}
+
+.main--searching {
+  display: flex;
+  flex-direction: column;
 }
 
 // Контейнер
@@ -114,62 +118,74 @@ section {
 $container: 1072;
 
 .container, section, header, footer {
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
-	
-	@media (min-width: #{$container}px) {
-		padding-left: max(var(--container-padding), calc(50% - #{math.div($container, 2)}px));
-		padding-right: max(var(--container-padding), calc(50% - #{math.div($container, 2)}px));
-	}
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+
+  @media (min-width: #{$container}px) {
+    padding-left: max(
+      var(--container-padding),
+      calc(50% - #{math.div($container, 2)}px)
+    );
+    padding-right: max(
+      var(--container-padding),
+      calc(50% - #{math.div($container, 2)}px)
+    );
+  }
+}
+
+.header--for-searching {
+  background: var(--white);
 }
 // /Контейнер
 
-
 // Скрытие блока как через display: none но не через display: none. Важно для SEO и не только.
 .visually-hidden {
-	position: absolute;
-	width: 1px; height: 1px;
-	margin: -1px; padding: 0;
-	border: 0;
-	white-space: nowrap;
-	clip-path: inset(100%);
-	clip: rect(0 0 0 0);
-	overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 // Отдельные класы для скрытия и отображения блоков на разных экранов
 .visible-on-mob {
-	@include _992 {
-		display: none !important;
-	}
+  @include _992 {
+    display: none !important;
+  }
 }
 
 .visible-on-desktop {
-	@media (max-width: 991px) {
-		display: none !important;
-	}
+  @media (max-width: 991px) {
+    display: none !important;
+  }
 }
 
 // Предотвращение взаемодействия (нажатия или выдиления) с блоком который скрыт через aria-hidden.
 // В основном используется для декоративных элементов которые не нужно учитывать как часть контента
 // Важно для SEO и не только
 [aria-hidden="true"] {
-	pointer-events: none; user-select: none;
+  pointer-events: none;
+  user-select: none;
 }
 
 // reset-стили для слайдера. Подробнее в main.js (раздел со слайдером)
 .splide__arrow--prev svg {
-	transform: none;
+  transform: none;
 }
 
 .splide__arrow:focus-visible {
-	outline: none;
+  outline: none;
 }
 
 .splide.is-focus-in .splide__arrow:focus {
-	outline: none;
+  outline: none;
 }
 
 .splide__arrow:hover:not(:disabled) {
-	opacity: 1;
+  opacity: 1;
 }
