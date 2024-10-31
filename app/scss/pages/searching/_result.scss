@@ -1,9 +1,12 @@
 .searching-section-result {
-  padding: 40px;
+  // padding: 30px;
   background: rgba(255, 255, 255, 0.8);
 
   @include _1200{
     flex: 2 1 auto;
   }
 
+  h3{
+    padding: 20px 0 40px;
+  }
 }
