@@ -97,6 +97,12 @@ document.querySelectorAll(".history__gallery").forEach((sliderElement) => {
     easing: "ease",
 
     pagination: false,
+
+    breakpoints: {
+      992: {
+        focus: "center"
+      }
+    }
   });
 
   slider.mount();
@@ -112,6 +118,12 @@ document.querySelectorAll(".uu__gallery").forEach((sliderElement) => {
     easing: "ease",
 
     pagination: false,
+    
+    breakpoints: {
+      992: {
+        focus: "center"
+      }
+    }
   });
 
   slider.mount();

@@ -60,7 +60,7 @@
 					color: var(--white);
 				}
 			
-				&:active {
+				&:hover:active {
 					background: var(--accent-active);
 					color: var(--white);
 				}
@@ -246,31 +246,8 @@
 
 .recipe-plan-card {
 
-	// .recipe-plan-card__input
-
-	&__input {
-		position: absolute;
-		width: 1px; height: 1px;
-		margin: -1px; padding: 0;
-		border: 0;
-		
-		white-space: nowrap;
-		clip-path: inset(100%);
-		clip: rect(0 0 0 0);
-		overflow: hidden;
-	}
-
-	&__input:checked + &__inner {
-		background: var(--white);
-	}
-
-	&__input:checked + &__inner &__header span {
-		background: var(--accent);
-		border-color: var(--accent);
-	}
-
 	@media (hover: hover) {
-		&__input:not(:checked) + &__inner:hover &__header {
+		&__inner:not(.is-active):hover &__header {
 			span {
 				border-color: var(--accent);
 			}
@@ -280,7 +257,7 @@
 			}
 		}
 
-		&__input:not(:checked) + &__inner:active &__header {
+		&__inner:not(.is-active):active &__header {
 			span {
 				border-color: var(--accent-active);
 			}
@@ -298,14 +275,29 @@
 
 		padding: 16px 8px;
 
+		background: transparent;
 		border-radius: 8px;
+
+		font-family: var(--main-font);
+		text-align: start;
+		color: #343328;
+		line-height: 150%;
 
 		transition: background .2s;
 		cursor: pointer;
 
+		&.is-active {
+			background: var(--white);
+		}
+
 		@include _550 {
 			padding: 24px 32px;
 		}
+	}
+
+	&__inner.is-active &__header span {
+		background: var(--accent);
+		border-color: var(--accent);
 	}
 
 	// .recipe-plan-card__header
@@ -315,17 +307,23 @@
 
 		span {
 			position: absolute;
-			left: 0; top: 8px;
+			left: 0; top: 6.5px;
 
-			width: 19px; height: 19px;
+			width: 14px; height: 14px;
 
 			border: 1px solid var(--tertiary);
 			border-radius: 50%;
 
 			transition: background .2s, border-color .2s;
+
+			@include _550 {
+				top: 8px;
+
+				width: 19px; height: 19px;
+			}
 		}
 		h3 {
-			padding-left: 32px;
+			padding-left: 20px;
 
 			font-family: var(--title-font);
 			font-weight: 500;
@@ -336,6 +334,8 @@
 			transition: color .2s;
 
 			@include _550 {
+				padding-left: 32px;
+
 				font-size: 2rem;
 			}
 		}
@@ -361,7 +361,7 @@
 			}
 
 			&:not(:first-child) {
-				margin-top: 8px;
+				margin-top: 16px;
 			}
 			
 			&::before {
@@ -372,9 +372,7 @@
 				left: 0; top: 0;
 
 				font-weight: 700;
-				
 			}
-			
 		}
 	}
 }

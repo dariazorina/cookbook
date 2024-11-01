@@ -36,17 +36,24 @@ document.querySelectorAll(".recipe__portions").forEach((recipePortions) => {
 		})
 	}
 
+	document.querySelectorAll(".recipe-plan-card__inner").forEach(card => {
+		card.addEventListener("click", (event) => {
+			if(!card.classList.contains("is-active")) {
+				document.querySelectorAll(".recipe-plan-card__inner.is-active").forEach(activeCard => activeCard.classList.remove("is-active"))
+				card.classList.add("is-active");
+			}
+		})
+	})
+
 	// Запрет на ввод всех символов кроме цифр
 	input.addEventListener("input", () => {
 		input.value = input.value.replace(/[^+\d]/g, "");
-
-		change();
 	});
 
 	// Подсчет максимального и минимально количества порций
 	input.addEventListener("blur", () => {
-		if (input.value <= 0) input.value = 1;
-		else if (input.value >= input.max) input.value = input.max;
+		if (Number(input.value) <= 1) input.value = 1;
+		else if (Number(input.value) >= Number(input.max)) input.value = input.max;
 
 		change();
 	});
