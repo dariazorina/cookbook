@@ -4,35 +4,28 @@ document.querySelectorAll(".recipe__portions").forEach((recipePortions) => {
 	// Сохранения основных переменных
 	const input = recipePortions.querySelector("input"),
 		minus = recipePortions.querySelector("button[data-minus]"),
-		plus = recipePortions.querySelector("button[data-plus]");
-
+		plus = recipePortions.querySelector("button[data-plus]"),
+		origPortions = Number(input.dataset.portions);
+		
 	function change() {
 
 		const portionsQuantity = input.value;
 
-		document.querySelectorAll(".recipe__ingredients label").forEach(label => {
+    	document.querySelectorAll(".recipe__ingredients label").forEach(label => {
 
 			const input = label.querySelector("input"),
 			element = label.querySelectorAll("span")[1];
-
+			
 			if(input.dataset.label) {
 				const text = input.dataset.label,
 				quantity = Number(input.dataset.quantity),
-				type = input.dataset.type ? ` ${input.dataset.type}` : "",
-				increase = Number(input.dataset.increase);
-
+				type = input.dataset.type ? ` ${input.dataset.type}` : "";
+				
 				if(quantity) {
-					if(increase) {
-						const newValue = Math.round(quantity + (increase * (portionsQuantity-1)));
-						element.textContent = `(${newValue}${type}) ${text}`;
-					} else {
-						if(increase !== 0) {
-							element.textContent = `(${Math.round(quantity*portionsQuantity)}${type}) ${text}`;
-						}
-					}
+					const newValue = (quantity / (origPortions || 1)) * portionsQuantity;
+					element.innerHTML = `${newValue}&#8202;${String(type).trim()} ${text}`;
 				}
 			}
-
 		})
 	}
 
@@ -67,7 +60,7 @@ document.querySelectorAll(".recipe__portions").forEach((recipePortions) => {
 
 	// Кнопка для увеличения порции на +1
 	plus.addEventListener("click", () => {
-		input.value = Number(input.value) + 1 <= input.max ? Number(input.value) + 1 : input.max;
+		input.value = Number(input.value) + 1 <= Number(input.max) ? Number(input.value) + 1 : Number(input.max);
 
 		change();
 	});
